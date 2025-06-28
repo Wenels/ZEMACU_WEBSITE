@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Zetech University Mang'u Christian Union. Explore worship, Bible studies, outreach, and grow your faith.">
+    <meta name="theme-color" content="#990bbf">
     <title>Home - Christian Union</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter&display=swap" rel="stylesheet">
@@ -22,21 +24,13 @@
         position: absolute;
         top: 0;
         left: 100%;
-        transition: transform 1.5s ease-in-out;
+        transition: left 1.5s ease-in-out;
         opacity: 1;
       }
       .slide img {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        display: block;
-      }
-      .slide iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         display: block;
@@ -52,6 +46,10 @@
         font-size: 1.25rem;
         font-style: italic;
         animation: verseFade 15s infinite;
+      }
+      @keyframes verseFade {
+        0%, 100% { opacity: 0; }
+        10%, 90% { opacity: 1; }
       }
       .testimonials-section {
         padding: 2rem 0;
@@ -92,19 +90,44 @@
         .testimonials-container { min-height: 120px; }
         .testimonial-item { font-size: 0.9rem; }
       }
+
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 30;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 0.5rem 1rem;
+        display: block;
+        text-align: left;
+        text-decoration: none;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
     </style>
   </head>
   <body class="bg-white" data-page="home">
     <canvas id="bgCanvas" class="absolute inset-0 z-0"></canvas>
     <div id="overlay" class="hidden"></div>
     <header class="z-50">
-      <nav class="container mx-auto p-4 flex justify-between items-center">
+      <nav class="container mx-auto p-4 flex justify-between items-center" role="navigation">
         <a href="index.html" class="flex items-center text-2xl font-bold font-playfair">
           <img src="https://i.ibb.co/z9THbdj/123.png" alt="Christian Union Logo" class="h-12 w-auto inline-block" onerror="this.style.display='none'; this.parentElement.innerText='Christian Union'">
         </a>
         <div class="md:hidden">
-          <button id="menuToggle" class="text-white focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          <button id="menuToggle" class="text-white focus:outline-none" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
           </button>
         </div>
         <ul id="navMenu" class="hidden md:flex space-x-4 font-inter">
@@ -126,66 +149,118 @@
       </nav>
     </header>
     <main class="container mx-auto p-4 text-center">
-      <h1 class="text-4xl font-playfair text-[#a117a4] mb-4 animate-fadeIn">Welcome to Zetech University Mang'u Christian Union</h1>
-      <p class="text-lg font-inter text-gray-800 mb-6">Join our vibrant community of faith, hope, and fellowship at Zetech University Mang'u Christian Union! Explore our diverse range of activities, including inspiring worship sessions, enriching Bible studies, uplifting fellowship gatherings, and impactful outreach programs designed to strengthen your spiritual journey. Connect with a supportive network of like-minded individuals who share your passion for growing in faith and making a positive difference. Whether you're seeking personal growth, meaningful relationships, or opportunities to serve, our union offers a welcoming space for all. Dive into our events and become part of a family that celebrates God's love every step of the way!</p>
-      <div class="slideshow-container">
-        <div class="slide"><img src="https://i.ibb.co/ks3FYzL0/IMG-20250407-WA0023.jpg" alt="Event 1" onload="console.log('Image 1 loaded')" onerror="console.log('Image 1 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/9mx7ncbC/IMG-20250407-WA0025.jpg" alt="Event 2" onload="console.log('Image 2 loaded')" onerror="console.log('Image 2 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/m5C10vxn/IMG-20250407-WA0039.jpg" alt="Event 3" onload="console.log('Image 3 loaded')" onerror="console.log('Image 3 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/Gv5M1kw3/IMG-20250407-WA0035.jpg" alt="Event 4" onload="console.log('Image 4 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/4wZz5fTQ/IMG-20250407-WA0053.jpg" alt="Event 5" onload="console.log('Image 5 loaded')" onerror="console.log('Image 5 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/vtXBDCQ/IMG-20250407-WA0088.jpg" alt="Event 6" onload="console.log('Image 6 loaded')" onerror="console.log('Image 6 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/GSc9Q2x/IMG-20250407-WA0052.jpg" alt="Event 7" onload="console.log('Image 7 loaded')" onerror="console.log('Image 7 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/KcvVQ5DL/IMG-20250407-WA0065.jpg" alt="Event 8" onload="console.log('Image 8 loaded')" onerror="console.log('Image 8 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/ZztMDLWv/IMG-20250407-WA0066.jpg" alt="Event 9" onload="console.log('Image 9 loaded')" onerror="console.log('Image 9 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/vCvh4dgq/IMG-20250407-WA0074.jpg" alt="Event 10" onload="console.log('Image 10 loaded')" onerror="console.log('Image 10 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/d4B60SD4/IMG-20250407-WA0038.jpg" alt="Event 11" onload="console.log('Image 11 loaded')" onerror="console.log('Image 11 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/ynD5W4F4/IMG-20250407-WA0034.jpg" alt="Event 12" onload="console.log('Image 12 loaded')" onerror="console.log('Image 12 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/xKgkyM7h/IMG-20250407-WA0109.jpg" alt="Event 13" onload="console.log('Image 13 loaded')" onerror="console.log('Image 13 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/Dfmzqt2n/IMG-20250407-WA0089.jpg" alt="Event 14" onload="console.log('Image 14 loaded')" onerror="console.log('Image 14 failed to load')"></div>
-        <div class="slide"><img src="https://i.ibb.co/CpWhGjWN/IMG-20250407-WA0075.jpg" alt="Event 15" onload="console.log('Image 15 loaded')" onerror="console.log('Image 15 failed to load')"></div>
+      <h1 class="text-4xl font-playfair text-[#a117a4] mb-4 animate-fadeIn">🙏 Join Zetech University Mang'u Christian Union!</h1>
+      <p class="text-lg font-inter text-gray-800 mb-6">Be part of a vibrant community of faith, hope & love 💫.
+Enjoy powerful worship 🎶, deep Bible studies 📖, warm fellowship 🤝 & life-changing outreach 🌍.
+Grow spiritually and connect with like-minded believers 💒.
+All are welcome — come experience God’s love ❤️!!</p>
+      <div class="slideshow-container" id="slideshow">
+        <div class="slide" style="left: 0;"><img src="https://i.ibb.co/ks3FYzL0/IMG-20250407-WA0023.jpg" alt="Event 1"></div>
+        <div class="slide"><img src="https://i.ibb.co/9mx7ncbC/IMG-20250407-WA0025.jpg" alt="Event 2"></div>
+        <div class="slide"><img src="https://i.ibb.co/m5C10vxn/IMG-20250407-WA0039.jpg" alt="Event 3"></div>
+        <div class="slide"><img src="https://i.ibb.co/Gv5M1kw3/IMG-20250407-WA0035.jpg" alt="Event 4"></div>
+        <div class="slide"><img src="https://i.ibb.co/4wZz5fTQ/IMG-20250407-WA0053.jpg" alt="Event 5"></div>
+        <div class="slide"><img src="https://i.ibb.co/vtXBDCQ/IMG-20250407-WA0088.jpg" alt="Event 6"></div>
+        <div class="slide"><img src="https://i.ibb.co/GSc9Q2x/IMG-20250407-WA0052.jpg" alt="Event 7"></div>
+        <div class="slide"><img src="https://i.ibb.co/KcvVQ5DL/IMG-20250407-WA0065.jpg" alt="Event 8"></div>
+        <div class="slide"><img src="https://i.ibb.co/ZztMDLWv/IMG-20250407-WA0066.jpg" alt="Event 9"></div>
+        <div class="slide"><img src="https://i.ibb.co/vCvh4dgq/IMG-20250407-WA0074.jpg" alt="Event 10"></div>
+        <div class="slide"><img src="https://i.ibb.co/d4B60SD4/IMG-20250407-WA0038.jpg" alt="Event 11"></div>
+        <div class="slide"><img src="https://i.ibb.co/ynD5W4F4/IMG-20250407-WA0034.jpg" alt="Event 12"></div>
+        <div class="slide"><img src="https://i.ibb.co/xKgkyM7h/IMG-20250407-WA0109.jpg" alt="Event 13"></div>
+        <div class="slide"><img src="https://i.ibb.co/Dfmzqt2n/IMG-20250407-WA0089.jpg" alt="Event 14"></div>
+        <div class="slide"><img src="https://i.ibb.co/CpWhGjWN/IMG-20250407-WA0075.jpg" alt="Event 15"></div>
       </div>
       <a href="weekly.html" class="inline-block bg-[#990bbf] text-white px-6 py-2 rounded hover:bg-[#00008b] transition-colors font-inter">Learn More</a>
-      <!-- Verse Display -->
+      <footer class="cu-footer container mx-auto py-8 text-center bg-[#f9f5fc] rounded-t-2xl shadow-inner animate-fade-up">
+        <p class="text-lg font-semibold text-[#990bbf] mb-4">
+          🙏 Submit your
+          <span class="text-[#a117a4]">Prayer Request</span>,
+          <span class="text-[#a117a4]">Testimony</span>, or
+          <span class="text-[#a117a4]">Offering</span>
+        </p>
+        <ul class="cu-footer-links flex flex-wrap justify-center gap-4">
+          <li>
+            <a href="testimonies.html" class="cu-footer-btn bg-[#990bbf] text-white px-5 py-2 rounded-full hover:bg-[#00008b] hover:scale-105 transition-all duration-300 ease-out">
+              ✍️ Testimonies
+            </a>
+          </li>
+          <li>
+            <a href="offerings.html" class="cu-footer-btn bg-[#990bbf] text-white px-5 py-2 rounded-full hover:bg-[#00008b] hover:scale-105 transition-all duration-300 ease-out">
+              💝 Offerings
+            </a>
+          </li>
+          <li>
+            <a href="prayer-requests.html" class="cu-footer-btn bg-[#990bbf] text-white px-5 py-2 rounded-full hover:bg-[#00008b] hover:scale-105 transition-all duration-300 ease-out">
+              🙌 Prayer Requests
+            </a>
+          </li>
+        </ul>
+      </footer>
       <div id="verseDisplay"></div>
-      <!-- Testimonials Section -->
       <section class="testimonials-section py-8 mt-8 bg-gray-100">
         <h2 class="text-3xl font-playfair text-[#a117a4] mb-6">What Our Members Say</h2>
         <div class="testimonials-container">
-          <div class="testimonial-item">
-            <img src="https://via.placeholder.com/40" alt="Member 1" class="testimonial-image">
-            <p class="testimonial-text">"This community has transformed my spiritual life! The worship sessions are incredible."</p>
+          <div class="testimonial-item active">
+            <img src="https://i.ibb.co/KcvVQ5DL/IMG-20250407-WA0065.jpg" alt="John Mwangi" class="testimonial-image">
+            <div class="testimonial-text">
+              <strong class="block text-sm text-[#990bbf] mb-1">John Mwangi</strong>
+              <p>"This community has transformed my spiritual life! The worship sessions are incredible."</p>
+            </div>
           </div>
           <div class="testimonial-item">
-            <img src="https://via.placeholder.com/40" alt="Member 2" class="testimonial-image">
-            <p class="testimonial-text">"The Bible studies here are so insightful and supportive."</p>
+            <img src="https://via.placeholder.com/40" alt="Grace Wanjiku" class="testimonial-image">
+            <div class="testimonial-text">
+              <strong class="block text-sm text-[#990bbf] mb-1">Grace Wanjiku</strong>
+              <p>"The Bible studies here are so insightful and supportive."</p>
+            </div>
           </div>
           <div class="testimonial-item">
-            <img src="https://via.placeholder.com/40" alt="Member 3" class="testimonial-image">
-            <p class="testimonial-text">"I’ve found true fellowship and encouragement in this union."</p>
+            <img src="https://via.placeholder.com/40" alt="Daniel Otieno" class="testimonial-image">
+            <div class="testimonial-text">
+              <strong class="block text-sm text-[#990bbf] mb-1">Daniel Otieno</strong>
+              <p>"I’ve found true fellowship and encouragement in this union."</p>
+            </div>
           </div>
           <div class="testimonial-item">
-            <img src="https://via.placeholder.com/40" alt="Member 4" class="testimonial-image">
-            <p class="testimonial-text">"The outreach programs have inspired me to serve others."</p>
+            <img src="https://via.placeholder.com/40" alt="Mercy Njeri" class="testimonial-image">
+            <div class="testimonial-text">
+              <strong class="block text-sm text-[#990bbf] mb-1">Mercy Njeri</strong>
+              <p>"The outreach programs have inspired me to serve others."</p>
+            </div>
           </div>
         </div>
       </section>
     </main>
     <footer class="container mx-auto p-4 text-center">
-      <p>Developed by Samuel Maina Gachuru</p>   
-      <ul class="flex justify-center spac-7a4]">Leaders</a></li>
-        <li><a href="registration.html" class="hover:text-[#a117a4]">Registration</a></li>
-        <li><a href="contact.html" class="hover:text-[#a117a4]">Contact Us</a></li>
-        <li class="dropdown">
-            <a href="#" class="hover:text-[#00008b] transition-colors">Pages</a>
-            <div class="dropdown-content">
-              <a href="testimonies.html">Testimonies</a>
-              <a href="offerings.html">Offerings</a>
-              <a href="prayer-requests.html">Prayer Requests</a>
-            </div>
+      <p>Social Handles</p>
+      <ul class="flex justify-center space-x-4 mt-2">
+        <li><a href="https://twitter.com/yourhandle" class="hover:text-[#a117a4]"><ion-icon name="logo-twitter"></ion-icon><span id="handles">zemacu@twitter</span></a></li>
+        <li><a href="https://facebook.com/yourhandle" class="hover:text-[#a117a4]"><ion-icon name="logo-facebook"></ion-icon><span id="handles">zemacu@facebook</span></a></li>
+        <li><a href="https://instagram.com/yourhandle" class="hover:text-[#a117a4]"><ion-icon name="logo-youtube"></ion-icon><span
+              id="handles"
+            >zemacu@yt</span></a></li>
+        <li><a href="https://linkedin.com/in/yourhandle" class="hover:text-[#a117a4]"><ion-icon name="logo-tiktok"></ion-icon><span id="handles">zemacu@tiktok</span></a></li>
+        <li><a href="https://linkedin.com/in/yourhandle" class="hover:text-[#a117a4]"><ion-icon name="logo-instagram"></ion-icon><span id="handles">zemacu@insta</span></a></li>
       </ul>
     </footer>
     <script src="assets/js/verses.js"></script>
     <script src="assets/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+      // Basic slideshow script
+      const slides = document.querySelectorAll('.slide');
+      let current = 0;
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.left = i === index ? '0' : '100%';
+        });
+      }
+      setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }, 5000);
+    </script>
   </body>
 </html>

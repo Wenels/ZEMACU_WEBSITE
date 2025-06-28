@@ -37,133 +37,55 @@
         </ul>
       </nav>
     </header>
-    <main class="container mx-auto p-4 text-center z-20 relative"> <!-- Increased z-index to 20 -->
+    <main class="container mx-auto p-4 text-center z-20 relative" style="margin-top: 80px;">
       <h1 class="text-4xl font-playfair text-[#a117a4] mb-4 animate-fadeIn">Contact Us</h1>
       <p class="text-lg font-inter text-gray-800 mb-6">Reach out to us with your questions or feedback.</p>
-      <!-- Jotform Embed Code -->
-      <div class="jotform-embed" id="JotFormIFrame-251612682564055">
-        <iframe
-          id="JotFormIFrame-251612682564055"
-          title="Christian Union Contact"
-          onload="window.parent.scrollTo(0,0)"
-          allowtransparency="true"
-          allowfullscreen="true"
-          allow="geolocation; microphone; camera"
-          src="https://form.jotform.com/251612682564055"
-          frameborder="0"
-          style="min-width: 100%; max-width: 100%; height: 698px; border: none; z-index: 10;" <!-- Added z-index to iframe -->
-          scrolling="no"
-        ></iframe>
-        <script type="text/javascript">
-          var ifr = document.getElementById("JotFormIFrame-251612682564055");
-          if (ifr) {
-            var src = ifr.src;
-            var iframeParams = [];
-            if (window.location.href && window.location.href.indexOf("?") > -1) {
-              iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-            }
-            if (src && src.indexOf("?") > -1) {
-              iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-              src = src.substr(0, src.indexOf("?"))
-            }
-            iframeParams.push("isIframeEmbed=1");
-            ifr.src = src + "?" + iframeParams.join('&');
-          }
-          window.handleIFrameMessage = function(e) {
-            if (typeof e.data === 'object') return;
-            var args = e.data.split(":");
-            if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
-            if (!iframe) return;
-            switch (args[0]) {
-              case "scrollIntoView":
-                iframe.scrollIntoView();
-                break;
-              case "setHeight":
-                iframe.style.height = args[1] + "px";
-                break;
-              case "collapseErrorPage":
-                if (iframe.clientHeight > window.innerHeight) {
-                  iframe.style.height = window.innerHeight + "px";
-                }
-                break;
-              case "reloadPage":
-                window.location.reload();
-                break;
-              case "loadScript":
-                if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
-                var src = args[1];
-                if (args.length > 3) {
-                    src = args[1] + ':' + args[2];
-                }
-                var script = document.createElement('script');
-                script.src = src;
-                script.type = 'text/javascript';
-                document.body.appendChild(script);
-                break;
-              case "exitFullscreen":
-                if      (window.document.exitFullscreen)         window.document.exitFullscreen();
-                else if(window.document.mozCancelFullScreen)     window.document.mozCancelFullScreen();
-                else if(window.document.mozCancelFullscreen)     window.document.mozCancelFullScreen();
-                else if(window.document.webkitExitFullscreen)    window.document.webkitExitFullscreen();
-                else if(window.document.msExitFullscreen)        window.document.msExitFullscreen();
-                break;
-            }
-            var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-            if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-              var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
-              iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
-            }
-          };
-          window.isPermitted = function(originUrl, whitelisted_domains) {
-            var url = document.createElement('a');
-            url.href = originUrl;
-            var hostname = url.hostname;
-            var result = false;
-            if( typeof hostname !== 'undefined' ) {
-              whitelisted_domains.forEach(function(element) {
-                  if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element ) {
-                      result = true;
-                  }
-              });
-              return result;
-            }
-          };
-          if (window.addEventListener) {
-            window.addEventListener("message", handleIFrameMessage, false);
-          } else if (window.attachEvent) {
-            window.attachEvent("onmessage", handleIFrameMessage);
-          }
-        </script>
-      </div>
-      <p class="text-lg font-inter text-gray-800 mt-8">If the form doesn't load, please
-        <a href="https://form.jotform.com/251612682564055" class="text-[#990bbf] underline">click here</a>
-        to contact us directly.</p> <!-- Increased margin-top to 8 -->
+      <iframe src="https://form.jotform.com/251783268433059" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      <p class="mt-4">If the form doesn't load, please
+        <a href="https://form.jotform.com/251783268433059" target="_blank" class="text-[#990bbf] hover:underline">click here</a>
+        to contact us directly.</p>
       <div class="mt-8">
         <h2 class="text-2xl font-inter text-[#333] mb-2">Contact Details</h2>
-        <p class="text-lg font-inter text-gray-800">Email: [email protected]</p>
-        <p class="text-lg font-inter text-gray-800">Phone: +1-555-123-4567</p>
-        <p class="text-lg font-inter text-gray-800">Address: 123 Faith Street, Hope City, HC 12345</p>
+        <p class="text-lg font-inter text-gray-800">Email: zecumangucampus2022@gmail.com</p>
+        <p class="text-lg font-inter text-gray-800">Phone: Secretary:::0743534987.</p>
+        <p class="text-lg font-inter text-gray-800">Address: W3P2+87, Thika.</p>
       </div>
-    </main>
+      <footer class="cu-footer container mx-auto py-8 text-center bg-[#f9f5fc] rounded-t-2xl shadow-inner animate-fade-up">
+        <p class="text-lg font-semibold text-[#990bbf] mb-4">
+          🙏 Submit your
+          <span class="text-[#a117a4]">Prayer Request</span>,
+          <span class="text-[#a117a4]">Testimony</span>, or
+          <span class="text-[#a117a4]">Offering</span>
+        </p>
+        <ul class="cu-footer-links flex flex-wrap justify-center gap-4">
+          <li>
+            <a href="testimonies.html" class="cu-footer-btn bg-[#990bbf] text-white px-5 py-2 rounded-full hover:bg-[#00008b] hover:scale-105 transition-all duration-300 ease-out">
+              ✍️ Testimonies
+            </a>
+          </li>
+          <li>
+            <a href="offerings.html" class="cu-footer-btn bg-[#990bbf] text-white px-5 py-2 rounded-full hover:bg-[#00008b] hover:scale-105 transition-all duration-300 ease-out">
+              💝 Offerings
+            </a>
+          </li>
+          <li>
+            <a href="prayer-requests.html" class="cu-footer-btn bg-[#990bbf] text-white px-5 py-2 rounded-full hover:bg-[#00008b] hover:scale-105 transition-all duration-300 ease-out">
+              🙌 Prayer Requests
+            </a>
+          </li>
+        </ul>
+      </footer>
+</main>
     
     <footer class="container mx-auto p-4 text-center">
       <p>Developed by Samuel Maina Gachuru</p>
       <ul class="flex justify-center space-x-4 mt-2">
-        <li><a href="index.html" class="hover:text-[#a117a4]">Home</a></li>
-        <li><a href="weekly.html" class="hover:text-[#a117a4]">Weekly Program</a></li>
-        <li><a href="gallery-blog.html" class="hover:text-[#a117a4]">Gallery/Blog</a></li>
-        <li><a href="leaders.html" class="hover:text-[#a117a4]">Leaders</a></li>
-        <li><a href="registration.html" class="hover:text-[#a117a4]">Registration</a></li>
-        <li><a href="contact.html" class="hover:text-[#a117a4]">Contact Us</a></li>
-        <li class="dropdown">
-            <a href="#" class="hover:text-[#00008b] transition-colors">Pages</a>
-            <div class="dropdown-content">
-              <a href="testimonies.html">Testimonies</a>
-              <a href="offerings.html">Offerings</a>
-              <a href="prayer-requests.html">Prayer Requests</a>
-            </div>
+        <li><a href="https://twitter.com/yourhandle" class="hover:text-[#a117a4]"><img src="edited_logos.png" alt="Twitter" class="w-6 h-6"></a></li>
+        <li><a href="https://facebook.com/yourhandle" class="hover:text-[#a117a4]"><img src="edited_logos.png" alt="Facebook" class="w-6 h-6"></a></li>
+        <li><a href="https://instagram.com/yourhandle" class="hover:text-[#a117a4]"><img src="edited_logos.png" alt="Instagram" class="w-6 h-6"></a></li>
+        <li><a href="https://linkedin.com/in/yourhandle" class="hover:text-[#a117a4]"><img src="edited_logos.png" alt="LinkedIn" class="w-6 h-6"></a></li>
       </ul>
-    </footer>
+</footer>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

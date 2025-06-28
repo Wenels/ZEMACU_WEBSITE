@@ -664,6 +664,16 @@ footer ul li a {
     font-weight: 500;
 }
 
+#handles {
+    display: none;
+}
+
+@media(max-width: 768px){
+    #handles{
+        display: block;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -716,4 +726,34 @@ footer ul li a {
 @media (max-width: 768px) {
     .gallery-item { height: 150px; }
     .gallery-caption { font-size: 0.8rem; }
+}
+
+
+
+.testimonial-text {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  max-width: calc(100% - 60px); /* avoids overflow */
+}
+
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 1s ease-out both;
+}
+
+
+.cu-footer-btn:hover {
+  box-shadow: 0 0 15px rgba(153, 11, 191, 0.6);
 }
